@@ -1,107 +1,69 @@
-<!DOCTYPE html>
-<html lang="sr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Први рођендан - Патролне шапе!</title>
-    <style>
-        /* Основни стилови и боје патролних шапа (плава, црвена, жута) */
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
-            text-align: center;
-            color: #333;
-        }
-
-        .header {
-            background-color: #e21b22; /* Црвена као Маршал */
-            padding: 50px;
-            color: white;
-            border-bottom: 10px solid #f9d71c; /* Жута као Рабл */
-        }
-
-        /* Анимација скакања за наслов */
-        h1 {
-            font-size: 3rem;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .invitation-card {
-            background: white;
-            margin: 50px auto;
-            padding: 30px;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border: 5px dashed #1a73e8; /* Плава као Чејс */
-        }
-
-        .btn {
-            background-color: #1a73e8;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .btn:hover {
-            transform: scale(1.1) rotate(5deg);
-            background-color: #e21b22;
-        }
-
-        .paw-icon {
-            width: 50px;
-            margin-top: 20px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="header">
-        <h1>Спремни за акцију! 🐾</h1>
-        <p>Марко слави 1. рођендан!</p>
-    </div>
-
-    <div class="invitation-card">
-        <h2>Позивница</h2>
-        <p>Придружите се нашој патроли на прослави рођендана!</p>
-        <hr>
-        <p><strong>Датум:</strong> 25. мај 2026.</p>
-        <p><strong>Време:</strong> 17:00 часова</p>
-        <p><strong>Место:</strong> Играоница "Шапица"</p>
+<div class="team-container">
+    <h3 style="color: #1a73e8;">Твоја омиљена екипа те чека:</h3>
+    <div class="character-grid">
         
-        <a href="https://maps.google.com" target="_blank" class="btn">📍 Види локацију</a>
-        <br>
-        <img src="https://cdn-icons-png.flaticon.com/512/107/107138.png" class="paw-icon" id="paw" alt="Paw">
-        <p id="message">Кликни на шапицу!</p>
+        <div class="character-card chase">
+            <img src="https://img.icons8.com/color/96/german-shepherd.png" alt="Chase">
+            <p>Чејс је спреман за акцију!</p>
+        </div>
+
+        <div class="character-card marshall">
+            <img src="https://img.icons8.com/color/96/dalmatian.png" alt="Marshall">
+            <p>Маршал је на задатку!</p>
+        </div>
+
+        <div class="character-card skye">
+            <img src="https://img.icons8.com/color/96/cockapoo.png" alt="Skye">
+            <p>Идемо у висине!</p>
+        </div>
+
     </div>
+</div>
 
-    <script>
-        // Једноставна интеракција преко JavaScript-а
-        const paw = document.getElementById('paw');
-        const message = document.getElementById('message');
+<style>
+    /* Стилизација мреже за ликове */
+    .team-container {
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        margin: 20px auto;
+        max-width: 800px;
+    }
 
-        paw.addEventListener('click', () => {
-            message.innerText = "Авау! Видимо се тамо!";
-            message.style.color = "#e21b22";
-            paw.style.transform = "rotate(360deg)";
-            paw.style.transition = "1s";
-        });
-    </script>
+    .character-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
 
-</body>
-</html>
+    .character-card {
+        padding: 15px;
+        border-radius: 15px;
+        width: 150px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 3px solid transparent;
+    }
+
+    /* Анимација на ховер (интеракција) */
+    .character-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Појединачне боје за сваког куцу */
+    .chase { border-color: #1a73e8; background-color: #e8f0fe; }
+    .marshall { border-color: #e21b22; background-color: #fdeaea; }
+    .skye { border-color: #f06292; background-color: #fce4ec; }
+
+    .character-card img {
+        width: 80px;
+        height: auto;
+    }
+
+    .character-card p {
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+</style>
