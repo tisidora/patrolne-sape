@@ -1,68 +1,157 @@
-<div class="team-container">
-    <h3 style="color: #1a73e8;">Твоја омиљена екипа те чека:</h3>
-    <div class="character-grid">
-        
-        <div class="character-card chase">
-            <img src="https://img.icons8.com/color/96/german-shepherd.png" alt="Chase">
-            <p>Чејс је спреман за акцију!</p>
-        </div>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Марков 1. рођендан - Патролне шапе</title>
+    <style>
+        /* Глобални стилови */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            text-align: center;
+        }
 
-        <div class="character-card marshall">
-            <img src="https://img.icons8.com/color/96/dalmatian.png" alt="Marshall">
-            <p>Маршал је на задатку!</p>
-        </div>
+        /* Заглавље */
+        .header {
+            background-color: #e21b22; /* Маршал црвена */
+            color: white;
+            padding: 40px 20px;
+            border-bottom: 8px solid #f9d71c; /* Рабл жута */
+        }
 
-        <div class="character-card skye">
-            <img src="https://img.icons8.com/color/96/cockapoo.png" alt="Skye">
-            <p>Идемо у висине!</p>
-        </div>
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            animation: bounce 2s infinite;
+        }
 
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Главна картица позивнице */
+        .invitation-container {
+            max-width: 600px;
+            margin: -30px auto 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 5px solid #1a73e8; /* Чејс плава */
+        }
+
+        .info-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Секција са ликовима */
+        .team-title {
+            color: #1a73e8;
+            margin-top: 40px;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .character-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            border-bottom: 5px solid transparent;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .character-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Боје за сваког куцу */
+        .chase { border-color: #1a73e8; background-color: #e8f0fe; }
+        .marshall { border-color: #e21b22; background-color: #fdeaea; }
+        .skye { border-color: #f06292; background-color: #fce4ec; }
+
+        .char-img-placeholder {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e21b22;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🐾 ПАТРОЛА У АКЦИЈИ! 🐾</h1>
+        <p>Нема задатка који је превелик, нити слављеника који је премали!</p>
     </div>
-</div>
 
-<style>
-    /* Стилизација мреже за ликове */
-    .team-container {
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 20px;
-        margin: 20px auto;
-        max-width: 800px;
-    }
+    <div class="invitation-container">
+        <h2>Марко слави 1. рођендан!</h2>
+        <div class="info-text">
+            <p>📍 <strong>Где:</strong> Играоница "Срећица"</p>
+            <p>📅 <strong>Када:</strong> 25. Мај у 17:00х</p>
+            <p>Спремите се за игру, торту и патролне авантуре!</p>
+        </div>
+        <a href="https://maps.google.com" class="btn">📍 Отвори мапу</a>
+    </div>
 
-    .character-grid {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
+    <h2 class="team-title">Упознај екипу:</h2>
+    
+    <div class="character-grid">
+        <div class="character-card chase" onclick="alert('Чејс је спреман за полицијски задатак!')">
+            <div class="char-img-placeholder">🐕‍🦺</div>
+            <strong>ЧЕЈС</strong>
+            <p>Полицијски куца</p>
+        </div>
 
-    .character-card {
-        padding: 15px;
-        border-radius: 15px;
-        width: 150px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 3px solid transparent;
-    }
+        <div class="character-card marshall" onclick="alert('Маршал је спреман за ватрогасну акцију!')">
+            <div class="char-img-placeholder">🚒</div>
+            <strong>МАРШАЛ</strong>
+            <p>Ватрогасац</p>
+        </div>
 
-    /* Анимација на ховер (интеракција) */
-    .character-card:hover {
-        transform: translateY(-10px) scale(1.05);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
+        <div class="character-card skye" onclick="alert('Скај је спремна за лет!')">
+            <div class="char-img-placeholder">🚁</div>
+            <strong>СКАЈ</strong>
+            <p>Авијатичарка</p>
+        </div>
+    </div>
 
-    /* Појединачне боје за сваког куцу */
-    .chase { border-color: #1a73e8; background-color: #e8f0fe; }
-    .marshall { border-color: #e21b22; background-color: #fdeaea; }
-    .skye { border-color: #f06292; background-color: #fce4ec; }
+    <footer style="margin: 50px 0; color: #888;">
+        <p>Направио Партнер за кодирање 🐾</p>
+    </footer>
 
-    .character-card img {
-        width: 80px;
-        height: auto;
-    }
-
-    .character-card p {
-        font-size: 0.9rem;
+</body>
+</html>
         font-weight: bold;
         margin-top: 10px;
     }
