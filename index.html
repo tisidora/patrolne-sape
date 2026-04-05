@@ -1,157 +1,129 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Марков 1. рођендан - Патролне шапе</title>
-    <style>
-        /* Глобални стилови */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f4f8;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Заглавље */
-        .header {
-            background-color: #e21b22; /* Маршал црвена */
-            color: white;
-            padding: 40px 20px;
-            border-bottom: 8px solid #f9d71c; /* Рабл жута */
-        }
+<title>Prvi rođendan</title>
 
-        .header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            animation: bounce 2s infinite;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
+<style>
 
-        /* Главна картица позивнице */
-        .invitation-container {
-            max-width: 600px;
-            margin: -30px auto 30px;
-            background: white;
-            padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border: 5px solid #1a73e8; /* Чејс плава */
-        }
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #f8f5f2;
+    color: #4a4a4a;
+    text-align: center;
+}
 
-        .info-text {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #333;
-        }
+/* HERO */
+.hero {
+    padding: 40px 20px;
+    animation: fadeIn 1.5s ease;
+}
 
-        /* Секција са ликовима */
-        .team-title {
-            color: #1a73e8;
-            margin-top: 40px;
-        }
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
 
-        .character-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+.hero p {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
 
-        .character-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 20px;
-            border-bottom: 5px solid transparent;
-            transition: 0.3s;
-            cursor: pointer;
-        }
+/* IMAGE */
+.image-box {
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    animation: fadeIn 2s ease;
+}
 
-        .character-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+.image-box img {
+    width: 100%;
+    display: block;
+}
 
-        /* Боје за сваког куцу */
-        .chase { border-color: #1a73e8; background-color: #e8f0fe; }
-        .marshall { border-color: #e21b22; background-color: #fdeaea; }
-        .skye { border-color: #f06292; background-color: #fce4ec; }
+/* DETAILS */
+.details {
+    margin-top: 30px;
+    animation: fadeUp 2s ease;
+}
 
-        .char-img-placeholder {
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
+.details h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
 
-        .btn {
-            display: inline-block;
-            background: #1a73e8;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
+.details p {
+    margin: 5px 0;
+}
 
-        .btn:hover {
-            background: #e21b22;
-            transform: translateY(-3px);
-        }
-    </style>
+/* BUTTON */
+.btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 12px 25px;
+    background: #d8cfc4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #c4b8aa;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="header">
-        <h1>🐾 ПАТРОЛА У АКЦИЈИ! 🐾</h1>
-        <p>Нема задатка који је превелик, нити слављеника који је премали!</p>
-    </div>
+<div class="hero">
+    <h1>Naš mali Luka puni 1 🎂</h1>
+    <p>Pridružite nam se u proslavi</p>
+</div>
 
-    <div class="invitation-container">
-        <h2>Марко слави 1. рођендан!</h2>
-        <div class="info-text">
-            <p>📍 <strong>Где:</strong> Играоница "Срећица"</p>
-            <p>📅 <strong>Када:</strong> 25. Мај у 17:00х</p>
-            <p>Спремите се за игру, торту и патролне авантуре!</p>
-        </div>
-        <a href="https://maps.google.com" class="btn">📍 Отвори мапу</a>
-    </div>
+<div class="image-box">
+    <img src="https://via.placeholder.com/300" alt="Beba">
+</div>
 
-    <h2 class="team-title">Упознај екипу:</h2>
-    
-    <div class="character-grid">
-        <div class="character-card chase" onclick="alert('Чејс је спреман за полицијски задатак!')">
-            <div class="char-img-placeholder">🐕‍🦺</div>
-            <strong>ЧЕЈС</strong>
-            <p>Полицијски куца</p>
-        </div>
+<div class="details">
+    <h2>Detalji</h2>
+    <p>📅 15. maj 2026.</p>
+    <p>⏰ 17:00h</p>
+    <p>📍 Restoran Garden</p>
 
-        <div class="character-card marshall" onclick="alert('Маршал је спреман за ватрогасну акцију!')">
-            <div class="char-img-placeholder">🚒</div>
-            <strong>МАРШАЛ</strong>
-            <p>Ватрогасац</p>
-        </div>
-
-        <div class="character-card skye" onclick="alert('Скај је спремна за лет!')">
-            <div class="char-img-placeholder">🚁</div>
-            <strong>СКАЈ</strong>
-            <p>Авијатичарка</p>
-        </div>
-    </div>
-
-    <footer style="margin: 50px 0; color: #888;">
-        <p>Направио Партнер за кодирање 🐾</p>
-    </footer>
+    <a href="#" class="btn">Potvrdi dolazak</a>
+</div>
 
 </body>
 </html>
+
         font-weight: bold;
         margin-top: 10px;
     }
